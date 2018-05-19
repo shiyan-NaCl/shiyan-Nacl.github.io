@@ -1,24 +1,18 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
-<div class="post">
-{{ content }}
-</div>
-
-{% if site.owner.twitter %}
-    <div class="keep-in-touch">
-      <p>
-        Tweet me <a href="https://twitter.com/{{site.owner.twitter}}">@{{ site.owner.twitter }}</a> if you like this post.
-      </p>
+<article class="page-article">
+  <div class="wrap-content">
+    <header class="page-header">
+      <h1 class="page-title">{{page.title}}</h1>
+      <div class="page-date"><span>{{page.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    </header>
+    <div class="page-content">
+      {% if page.img %}
+      <img class="page-img" src={{ "/assets/img/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
+      {% endif %}
+      {{page.content | markdownify}}
     </div>
-{% endif %}
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ site.owner.twitter }}" data-size="large" data-hashtags="{{site.name}}">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-{% if site.disqus_shortname %}
-{% include disqus_comments.html %}
-{% endif %}
+    {% include disqus.html %}
+  </div>
+</article>

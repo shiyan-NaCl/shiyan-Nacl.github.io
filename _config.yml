@@ -1,36 +1,36 @@
-name: White Paper
-description: >
-    A simple jekyll theme aimed at programmers who like clean interface to write posts
-    and show off some code.
-about: >
-    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+# Profile information
+name: Fresh
+title: Fresh - Free Jekyll Theme
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+permalink: ':title/'
+baseurl: "/fresh" # the subpath of your site, e.g. /blog
+url: "artemsheludko.pw" # the base hostname & protocol for your site, e.g. http://example.com
 
+# Social
+facebook: #Add your Facebook
+twitter: #Add your Twitter
+google-plus: #Add your Google+
+github: #Add your Github
 
-url: "http://vinitkumar.me/white-paper"
-baseurl: "/white-paper" 
+# Contact form
+email: #your-email@domain.com
+
+# Comments
+discus-identifier: # Add your Disqus identifier
+
+# Paginate
+paginate: 5
+paginate_path: /page:num/
+
+# Build settings
 markdown: kramdown
-highlighter: rouge
-
-gems: [jekyll-paginate,  jekyll-gist]
-
-paginate: 3
-
-logo:             logo.png
-disqus_shortname:
-
-owner:
-  name:           whitepaper
-  avatar:         ""
-  email:          ""
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:
-  github:
-  stackexchange:
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:
-
-# Analytics and webmaster tools stuff goes here
-google_analytics:
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+exclude:
+  - Gemfile
+  - Gemfile.lock
+include: [_pages]
